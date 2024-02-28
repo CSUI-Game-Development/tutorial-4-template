@@ -1,16 +1,12 @@
 extends KinematicBody2D
 
-export(int) var speed = 400
-export(int) var GRAVITY = 1200
-export(int) var jump_speed = -400
+export var speed: int = 400
+export var GRAVITY: int = 1200
+export var jump_speed: int = -400
 
-const UP = Vector2(0, -1)
+const UP: Vector2 = Vector2(0, -1)
 
-var velocity = Vector2()
-
-onready var animator = self.get_node("Animator")
-onready var sprite = self.get_node("Sprite")
-
+var velocity: Vector2 = Vector2()
 
 func get_input():
 	velocity.x = 0
@@ -30,12 +26,12 @@ func _physics_process(delta):
 
 func _process(delta):
 	if velocity.y != 0:
-		animator.play("Jump")
+		$Animator.play("Jump")
 	elif velocity.x != 0:
-		animator.play("Walk")
+		$Animator.play("Walk")
 		if velocity.x > 0:
-			sprite.flip_h = false
+			$Sprite.flip_h = false
 		else:
-			sprite.flip_h = true
+			$Sprite.flip_h = true
 	else:
-		animator.play("Idle")
+		$Animator.play("Idle")
