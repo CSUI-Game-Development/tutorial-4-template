@@ -83,7 +83,7 @@ points = PoolVector2Array( 0, 128, 128, 0, 128, 128 )
 [sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 2865, 178 )
 
-[node name="Level 1" type="Node2D"]
+[node name="Level1" type="Node2D"]
 
 [node name="Roket" type="Node2D" parent="."]
 position = Vector2( 2038, -389 )
